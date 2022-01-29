@@ -20,7 +20,6 @@ end;
 
 local function getDistanceFrom2(player1, player2)
     if player1.Character and player2.Character then
-        print("yuh"..tostring(player1.Character), tostring(player2.Character))
         return (player1.Character.HumanoidRootPart.Position - player2.Character.HumanoidRootPart.Position).Magnitude;
     end;
     return 0;
@@ -122,14 +121,13 @@ end)
 
 local function calculateY(target, dist)
     local function perfect()
-        if not getUserBehindPlayer(target) then print(530) return dist / (530) end;
+        if not getUserBehindPlayer(target) then rconsoleprint(target.Name, 530) return dist / (530) end;
         local distance = getDistanceFrom2(target, getUserBehindPlayer(target));
-        print((525 + (distance / 2)))
+        rconsoleprint(target.Name, (525 + (distance / 5)))
         return dist / (525 + (distance / 5));
     end;
     
     local z = perfect()
-    print(z)
     return dist * z;
 end;
 
@@ -151,7 +149,6 @@ local function getInfo(character2)
 
     local heyXD = head2.CFrame + hum2.MoveDirection * (hum2.WalkSpeed * (IDontCare(dist, power)) + 0.75);
     local offset = calculateY(players:GetPlayerFromCharacter(character2), (Vector3.new(heyXD.X, heyXD.Y, heyXD.Z) - newPos).Magnitude);
-    print(tostring(Vector3.new(heyXD.X, offset + heyXD.Y, heyXD.Z)));
     return Vector3.new(heyXD.X, offset + heyXD.Y, heyXD.Z);
 end;
 
