@@ -125,7 +125,7 @@ local function calculateY(target, dist)
         if not getUserBehindPlayer(target) then print(530) return dist / (530) end;
         local distance = getDistanceFrom2(target, getUserBehindPlayer(target));
         print((525 + (distance / 2)))
-        return dist / (525 + (distance / 2));
+        return dist / (525 + (distance / 5));
     end;
     
     local z = perfect()
