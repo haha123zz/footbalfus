@@ -124,7 +124,7 @@ local function calculateY(target, dist)
         if not getUserBehindPlayer(target) then rconsoleprint(target.Name, 530) return dist / (530) end;
         local distance = getDistanceFrom2(target, getUserBehindPlayer(target));
         rconsoleprint(target.Name, (525 + (distance / 11)))
-        return dist / (525 + (distance / 6));
+        return dist / (525 + (distance / 11));
     end;
     
     local z = perfect()
